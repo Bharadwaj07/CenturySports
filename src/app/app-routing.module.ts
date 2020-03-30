@@ -4,6 +4,7 @@ import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {path:'',component:RegisterComponent},
+
 ];
 
 @NgModule({
