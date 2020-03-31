@@ -4,12 +4,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
+import { FootballComponent } from './football/football.component';
+import { CricketComponent } from './cricket/cricket.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
+    FootballComponent,
+    CricketComponent,
    
   ],
   imports: [
