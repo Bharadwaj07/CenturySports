@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { FootballComponent } from './football/football.component';
 import { CricketComponent } from './cricket/cricket.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { CricketComponent } from './cricket/cricket.component';
     RegisterComponent,
     FootballComponent,
     CricketComponent,
-   
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
