@@ -13,25 +13,22 @@
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
             aria-expanded="false">Sports</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" routerLink='football/'>FootBall</a>
-              <a class="dropdown-item" routerLink='cricket/'>Cricket</a>
-              <a class="dropdown-item" href="#">Tennis</a>
-              <a class="dropdown-item" href="#">BasketBall</a>
+              <a class="dropdown-item" routerLink='sports/cricket'>Cricket</a>
+              <a class="dropdown-item" routerLink='sports/football'>Football</a>
+              <a class="dropdown-item" routerLink='sports/tennis'>Tennis</a>
+              <!-- <a class="dropdown-item" href="#">BasketBall</a>
               <a class="dropdown-item" href="#">Badminton</a>
-              <a class="dropdown-item" href="#">Hockey</a>
+              <a class="dropdown-item" href="#">Hockey</a> -->
             </div>
           </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#">Scores</a>
-        </li>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" href="#">Live</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Galery</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">My List</a>
+          <a class="nav-link" href="#">Highlights</a>
         </li>
       </ul>
       <ul class="navbar-nav ">
@@ -42,6 +39,10 @@
       </ul>
     </div>
   </nav>
-  <div>
+  <div class="container" style="min-height: 800px;">
       <router-outlet></router-outlet>
   </div>
+  <footer class="container text-center">
+    <hr/>
+    &copy;CenturySports
+  </footer>
