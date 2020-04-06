@@ -9,6 +9,7 @@ import { SportsComponent } from './sports/sports.component';
 import { SportsDetailsComponent } from './sports-details/sports-details.component';
 import { HighlightsComponent } from './highlights/highlights.component';
 import { SafePipe } from './service/pipe/safe.pipe';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SafePipe } from './service/pipe/safe.pipe';
     SportsDetailsComponent,
     HighlightsComponent,
     SafePipe,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
