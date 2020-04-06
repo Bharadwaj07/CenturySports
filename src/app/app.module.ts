@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HomeComponent} from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+
 import { SportsComponent } from './sports/sports.component';
 import { SportsDetailsComponent } from './sports-details/sports-details.component';
 import { HighlightsComponent } from './highlights/highlights.component';
@@ -15,6 +17,7 @@ import { LogoutComponent } from './logout/logout.component';
   declarations: [
     AppComponent,
     RegisterComponent,
+    LoginComponent,
     HomeComponent,
     SportsComponent,
     SportsDetailsComponent,
