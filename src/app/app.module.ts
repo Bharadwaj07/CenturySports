@@ -7,6 +7,8 @@ import {HomeComponent} from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { SportsComponent } from './sports/sports.component';
 import { SportsDetailsComponent } from './sports-details/sports-details.component';
+import { HighlightsComponent } from './highlights/highlights.component';
+import { SafePipe } from './service/pipe/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { SportsDetailsComponent } from './sports-details/sports-details.componen
     HomeComponent,
     SportsComponent,
     SportsDetailsComponent,
+    HighlightsComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
