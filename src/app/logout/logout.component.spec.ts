@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CricketComponent } from './cricket.component';
+import { LogoutComponent } from './logout.component';
 
-describe('CricketComponent', () => {
-  let component: CricketComponent;
-  let fixture: ComponentFixture<CricketComponent>;
+describe('LogoutComponent', () => {
+  let component: LogoutComponent;
+  let fixture: ComponentFixture<LogoutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CricketComponent ]
+      declarations: [ LogoutComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CricketComponent);
+    fixture = TestBed.createComponent(LogoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
