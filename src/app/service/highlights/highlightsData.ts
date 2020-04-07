@@ -23,7 +23,7 @@ export const HIGHLIGHTS: any[] =
       ]
     },
     {
-      Sport:"Tennis",
+      Sport:"Hockey",
       items: [
         { link: 'Zx2N9lgsk6E', sl_no: '1', Details: 'Mens FIH Tennis Pro League Highlights', title: 'India v Belgium' },
         { link: 'W8EbWX_8QCk', sl_no: '2', Details: 'Mens FIH Tennis Pro League Highlights', title: 'Australia v Belgium' },

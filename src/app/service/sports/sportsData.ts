@@ -238,7 +238,7 @@ export const SPORTS ={
            
         }
     ],
-    tennis:[
+    hockey:[
         {
             Country:"Spain",
             logo:"assets/images/India.png",
@@ -317,74 +317,3 @@ export const SPORTS ={
         }
     ]
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// [
-//     {
-//         url:"cricket",
-//         data:[{
-//             Country:"India",
-//             Players:["abc0","abc1","abc2","abc3","abc4","abc5","abc6","abc7","abc8","abc9","abc10"]
-//         },
-//         {
-//             Country:"Australia",
-//             Players:["pqr0","pqr1","pqr2","pqr3","pqr4","pqr5","pqr6","pqr7","pqr8","pqr9","pqr10"]
-//         },
-//         {
-//             Country:"England",
-//             Players:["xyz0","xyz1","xyz2","xyz3","xyz4","xyz5","xyz6","xyz7","xyz8","xyz9","xyz10"]
-//         }
-//     ]
-//     },
-//     {
-//         url:"football",
-//         data:[{
-//             Country:"Brazil",
-//             Players:["abc0","abc1","abc2","abc3","abc4","abc5","abc6","abc7","abc8","abc9","abc10"]
-//         },
-//         {
-//             Country:"Italy",
-//             Players:["pqr0","pqr1","pqr2","pqr3","pqr4","pqr5","pqr6","pqr7","pqr8","pqr9","pqr10"]
-//         },
-//         {
-//             Country:"England",
-//             Players:["xyz0","xyz1","xyz2","xyz3","xyz4","xyz5","xyz6","xyz7","xyz8","xyz9","xyz10"]
-//         }
-//     ]
-//     },
-//     {
-//         url:"tennis",
-//         data:[{
-//             Country:"USA",
-//             Players:["abc0","abc1","abc2","abc3","abc4","abc5","abc6","abc7","abc8","abc9","abc10"]
-//         },
-//         {
-//             Country:"France",
-//             Players:["pqr0","pqr1","pqr2","pqr3","pqr4","pqr5","pqr6","pqr7","pqr8","pqr9","pqr10"]
-//         },
-//         {
-//             Country:"England",
-//             Players:["xyz0","xyz1","xyz2","xyz3","xyz4","xyz5","xyz6","xyz7","xyz8","xyz9","xyz10"]
-//         }
-//     ]
-//     }
-// ]
