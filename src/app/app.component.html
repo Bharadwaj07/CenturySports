@@ -13,25 +13,43 @@
             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
             aria-expanded="false">Sports</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" routerLink='football/'>FootBall</a>
-              <a class="dropdown-item" routerLink='cricket/'>Cricket</a>
-              <a class="dropdown-item" href="#">Tennis</a>
-              <a class="dropdown-item" href="#">BasketBall</a>
+              <a class="dropdown-item" routerLink='sports/cricket'>Cricket</a>
+              <a class="dropdown-item" routerLink='sports/football'>Football</a>
+              <a class="dropdown-item" routerLink='sports/hockey'>Hockey</a>
+              <!-- <a class="dropdown-item" href="#">BasketBall</a>
               <a class="dropdown-item" href="#">Badminton</a>
-              <a class="dropdown-item" href="#">Hockey</a>
+              <a class="dropdown-item" href="#">Hockey</a> -->
             </div>
           </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="#">Scores</a>
+        </li> -->
         <li class="nav-item">
           <a class="nav-link" routerLink='live/'>Live</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink='highlights/'>Highlights</a>
+        </li>
       </ul>
       <ul class="navbar-nav ">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="login/">Login</a>
+        </li>
+        
         <li class="nav-item">
           <a class="nav-link" routerLink="register/">SignUp</a>
+        </li>        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="logout/">Logout</a>
         </li>
       </ul>
     </div>
   </nav>
-<div>
-     <router-outlet></router-outlet>
-</div>
+  <div class="container" style="min-height: 800px;">
+      <router-outlet></router-outlet>
+  </div>
+  <footer class="container text-center">
+    <hr/>
+    &copy;CenturySports
+  </footer>
