@@ -1,8 +1,10 @@
+@import "src/variables.scss";
+
 .entryContainer {
     height: 100%;
     width: 100%;
     overflow-y: auto;
-    background-image: linear-gradient(-45deg, #FFC796 0%, #FF6B95 100%);
+    background-image: $csp-primary-background-image;    
 
     .container {
         height: 100%;
@@ -13,17 +15,17 @@
             .entryWrapper {
                 align-self: center;
                 border-radius: 25px;
-                background: #fafafa;
+                background: $card-background-color;
                 padding: 30px;
                 margin-bottom: 20px;
                 
                 .csp-btn-primary {
-                    background-color: #e7717d;
+                    background-color: $color-foreground-secondary;
                     border: 0px;
                     margin: 5px;
                 }
                 .csp-link-primary {
-                    color: #FF6B95;;
+                    color: $color-foreground-primary;
                     border: 0px;
                     margin: 5px;
                 }

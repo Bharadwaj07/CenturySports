@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import {Highlights} from './highlights';
-import {HIGHLIGHTS} from './highlightsData';
+import { Highlights } from './highlights';
+import { HIGHLIGHTS } from './highlightsData';
 @Injectable({
   providedIn: 'root'
 })
 export class HighlightsService {
-  highlights : Highlights[];
+  highlights: Highlights[];
   constructor() { }
 
   getHighlights(index: number): Highlights[] {

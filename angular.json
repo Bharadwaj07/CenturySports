@@ -128,5 +128,10 @@
   "defaultProject": "CenturySports",
   "cli": {
     "analytics": false
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "style": "scss"
+    }
   }
 }

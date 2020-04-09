@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthenticationService } from '../core/authentication/authentication.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,24 +14,35 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private authenticationService: AuthenticationService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
-      this.loginForm = this.formBuilder.group({
-          username: ['', Validators.required],
-          password: ['', [Validators.required, Validators.minLength(6)]]
-      });
+    this.loginForm = this.formBuilder.group({
+      username: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
   }
 
   onSubmit() {
-      this.submitted = true;
+    this.submitted = true;
 
-      // stop the process here if form is invalid
-      if (this.loginForm.invalid) {
-          return;
+    // stop the process here if form is invalid
+    if (this.loginForm.invalid) {
+      return;
+    }
+
+    this.authenticationService.login(this.loginForm.value)
+    .subscribe(
+      userDetails => {
+        console.log('Logged in as ' + userDetails.name);
+
+        this.router.navigate(['/'], { replaceUrl: true});
       }
-
-      alert('SUCCESS!!');
+    )
   }
 }
 

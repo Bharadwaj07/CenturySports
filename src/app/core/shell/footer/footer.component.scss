@@ -1,0 +1,59 @@
+@import 'src/variables.scss';
+
+footer {
+    background-color: $color-background;
+    color: $color-card-background;
+    font-size: 16px;
+    padding: 20px;
+
+    a {
+        color: $color-card-background;
+    }
+
+    #socialLink p {
+        font-size: 17px;
+        text-align: center;
+    }
+
+    #socialLink li {
+        padding-left: 40%;
+    }
+
+    .list-unstyled.footerColumn li {
+        padding-bottom: 7px;
+    }
+
+    .fa-inverse {
+        color: #000 !important;
+    }
+
+    #col1_heading {
+        font-size: 25px;
+    }
+
+    #features {
+        h3 {
+            font-size: 150%;
+            font-family: gadget;
+        }
+
+        p {
+            font-family: sans-serif;
+            text-align: justify;
+        }
+
+        a {
+            font-family: sans-serif;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    div#footerCol1 ul li {
+        text-align: center;
+    }
+
+    div#footerCol1 ul {
+        border-bottom: 1px solid $color-card-background;
+    }
+}

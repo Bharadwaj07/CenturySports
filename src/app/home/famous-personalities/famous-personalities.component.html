@@ -1,0 +1,16 @@
+<div class="container famous-personalities-section">
+    <h3>Famous Personalities</h3>
+    <div class="row">
+        <div class="col-sm-6 col-md-4 famousPersonCard" *ngFor="let person of famousPersonalitiesData">
+            <div class="card">
+                <div class="card-title">
+                    <img class="img-circle" [src]="person.imagePath" alt="Card image cap">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{person.name}}</h5>
+                    <p class="card-text">{{person.cardHeading}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
