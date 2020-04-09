@@ -13,6 +13,9 @@ import { SafePipe } from './service/pipe/safe.pipe';
 import { LogoutComponent } from './logout/logout.component';
 import { LiveComponent } from './live/live.component';
 import { AgmCoreModule } from '@agm/core';
+import { HeaderComponent } from './shell/header/header.component';
+import { FooterComponent } from './shell/footer/footer.component';
+import { HomeCarouselComponent } from './home/home-carousel/home-carousel.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { AgmCoreModule } from '@agm/core';
     SafePipe,
     LogoutComponent,
     LiveComponent,
+    HeaderComponent,
+    FooterComponent,
+    HomeCarouselComponent,
   ],
   imports: [
     BrowserModule,

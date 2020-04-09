@@ -1,0 +1,9 @@
+#home-carousel {
+    margin-top: 50px;
+    box-shadow: 7px 11px #333;
+}
+
+.carousel-item img {
+    height: 500px;
+    border: 7px solid white;
+}

@@ -5,6 +5,11 @@ html, body {
     height: 100%;
 }
 
+@font-face {
+    font-family: 'Lobster', cursive;
+    src: url('assets/fonts/Lobster/Lobster-Regular.ttf');
+}
+
 .csContainer {
     height: 100%;
 }
