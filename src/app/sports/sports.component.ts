@@ -10,15 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 export class SportsComponent implements OnInit {
   sports:Sports[];
   url:string;
-  private routeSub:any;
-  constructor(private route:ActivatedRoute,private _sport:SportsService) { }
+  photos:any[]=["sp1.jpeg","sp2.jpeg","sp3.jpeg","sp4.jpeg"]
 
+  constructor(private route:ActivatedRoute,private _sport:SportsService) { }
+  
   ngOnInit(): void {
-    this.routeSub =this.route.params.subscribe(params =>{
+      this.route.params.subscribe(params =>{
       this.url = params['url'];
-      //console.log(params['url'])
+      console.log(params['url'])
       this.sports = this._sport.getSports(this.url)
-     //console.log(this.sports[0]['Player'])
+      console.log(this.sports[0]['Player'])
     
     })
   }

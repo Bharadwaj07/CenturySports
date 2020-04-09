@@ -8,7 +8,7 @@ import { SportsComponent } from './sports/sports.component';
 import { SportsDetailsComponent } from './sports-details/sports-details.component';
 import { LogoutComponent } from './logout/logout.component';
 import { LiveComponent } from './live/live.component';
-import { from } from 'rxjs';
+// import { from } from 'rxjs';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'register',component:RegisterComponent},

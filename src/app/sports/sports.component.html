@@ -1,19 +1,55 @@
-<h1>
-    {{ url  }} Teams
-</h1>
-<div class="container" style="margin-top: 50px;">
-  <div class="row" *ngFor="let sports of sports" style="display: inline-block; margin:20px;">
-    <div class="col-3">
-      <div class="card" style="width: 18rem;">
-        <img src="{{sports.logo}}" class="card-img-top" alt="..." style="height: 100px;">
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <div class="card" style="width: 10rem;margin-top: 20px;">
+        <div class="card-header">
+          International Top Teams
+        </div>
+        <ul class="list-group list-group-flush" *ngFor="let sports of sports">
+          <li class="list-group-item" style="cursor: pointer;" >
+            <!-- <a routerLink='/sports/{{url}}/{{sports.Country}}'>{{sports.Country}}</a> -->
+            <a [routerLink]="['/sports',url,sports.Country]">{{sports.Country}}</a>
+          </li>
+        </ul>
+      </div>
+      <div class="card" style="width: 10rem;margin-top: 20px;">
+        <div class="card-header">
+          Featured
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" style="cursor: pointer;" >ICC Cricket World Cup</li>
+          <li class="list-group-item" style="cursor: pointer;" >ICC T20 World Cup</li>
+          <li class="list-group-item" style="cursor: pointer;" >ICC Champions Trophy</li>
+          <li class="list-group-item" style="cursor: pointer;" >IPL</li>
+          <li class="list-group-item" style="cursor: pointer;" >Bigbash</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-7">
+      <div class="breadcrumb" style=" margin-left:40px;margin-top: 20px;">
+        Treanding.....
+      </div>
+      <div *ngFor='let photos of photos'>
+        <div class="card treanding" style="width: 30rem; margin-left:40px;margin-top: 20px;">
+          <div class="card-body">
+            <img src="assets/images/sports/{{photos}}" style="width: 100%;">
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget pharetra massa. Mauris vehicula, tortor in placerat efficitur, nulla nisl venenatis ligula, vitae accumsan dolor mi sed massa</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="card" style="width: 10rem;margin-top: 20px;">
         <div class="card-body">
-          <h5 class="card-title">{{sports.Country}}</h5>
-          <a routerLink='/sports/{{url}}/{{sports.Country}}' class="btn btn-primary">View Players</a>
+          <h5 class="card-title">Top Headlines</h5>
+          <div class="card-text">
+            <ul>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Lorem ipsum dolor sit amet</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-    
-  
- 
