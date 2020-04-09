@@ -1,7 +1,7 @@
 export const SPORTS ={
     cricket:[
         {
-            Country:"india",
+            Country:"India",
             logo:"assets/images/India.png",
             officialwebsite:'https://www.bcci.tv/',
             overview:{
