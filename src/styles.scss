@@ -2,6 +2,8 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
+@import "app/core/utils/css/hover-style.scss";
+
 html, body {
     position: relative;
 }
@@ -17,3 +19,4 @@ body{
 .csContainer {
     height: 100%;
 }
+

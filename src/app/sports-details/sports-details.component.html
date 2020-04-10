@@ -1,10 +1,10 @@
 <div class="container">
   <div class="card bg-dark text-white">
       <img class="card-img teamdetail" src="assets/images/sports/{{country}}/ind6.jpg" alt="Card image">
-      <div class="card-img-overlay">
-      </div>
+      <div class="card-img-overlay"></div>
   </div>
   <div>
+
     <ol class="breadcrumb breadcrumb-right-tag">
       <li class="breadcrumb-item" (click)="selectedTab('overview')">Overview</li>
       <li class="breadcrumb-item" (click)="selectedTab('player')">Player</li>
@@ -16,8 +16,8 @@
     <div [ngSwitch]='tabName'>
       <div *ngSwitchCase="'overview'">
         <div class="row">
-          <div class="col-3" style ='margin-left: 15px;' *ngFor="let item of team.overview | keyvalue">
-            <div class="card" style="width: 12rem;"  >
+          <div class="col-3" *ngFor="let item of team.overview | keyvalue">
+            <div class="card" >
               <div class="card-body">
                 <span class="card-title badge badge-secondary"> {{item.key}}</span>
                   <div *ngFor='let i of item.value | keyvalue'>
@@ -34,14 +34,16 @@
           </div>
         </div>
       </div>
-      <div class='row' *ngSwitchCase="'player'">
-        <div class="col-3" *ngFor="let player of team.Player">
-          <img src="{{player.imgUrl}}">
-          <strong>Name: {{player.Name}}</strong>
+      <div class='row playerSection' *ngSwitchCase="'player'">
+        <div class="col-3 playerBox" *ngFor="let player of team.Player">
+          <div class="card">
+            <img src="{{player.imgUrl}}">
+            <strong>Name: {{player.Name}}</strong>
+          </div>
        </div>
       </div>
-      <div *ngSwitchCase="'news'">
-          <div *ngFor='let n of news'>
+      <div class="newsSection" *ngSwitchCase="'news'">
+          <div class="newsBox" *ngFor='let n of news'>
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>

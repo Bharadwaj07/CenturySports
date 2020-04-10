@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-sports',
   templateUrl: './sports.component.html',
-  styleUrls: ['./sports.component.css']
+  styleUrls: ['./sports.component.scss']
 })
 export class SportsComponent implements OnInit {
   sports:Sports[];

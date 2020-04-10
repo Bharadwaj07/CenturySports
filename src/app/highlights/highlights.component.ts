@@ -4,7 +4,7 @@ import {Highlights} from '../service/highlights/highlights'
 @Component({
   selector: 'app-highlights',
   templateUrl: './highlights.component.html',
-  styleUrls: ['./highlights.component.css']
+  styleUrls: ['./highlights.component.scss']
 })
 export class HighlightsComponent implements OnInit {
   highlighs: Highlights[];
