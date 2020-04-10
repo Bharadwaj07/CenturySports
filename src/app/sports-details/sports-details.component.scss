@@ -1,0 +1,45 @@
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.breadcrumb {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.breadcrumb-right-tag {padding:0;background:none;}
+.breadcrumb-right-tag .breadcrumb-item {background:rgba(2, 117, 216, 0.8);padding:.5em 1em;}
+.breadcrumb-right-tag .breadcrumb-item a, .breadcrumb-right-tag .breadcrumb-item  {color:#fff;}
+.breadcrumb-item :hover { 
+    cursor: pointer;
+    background: cadetblue;
+
+}
+
+.breadcrumb-right-tag .breadcrumb-item+.breadcrumb-item::before {
+    content: "";
+  padding:0;
+}
+.teamdetail{
+    width: 100%;
+    height: 300px;
+}
+
+.playerSection {
+    padding: 15px;
+
+    .playerBox {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+}
+
+.newsSection {
+    .newsBox {
+        padding: 10px;
+    }
+}

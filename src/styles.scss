@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@import "app/core/utils/css/hover-style.scss";
+
+html, body {
+    position: relative;
+}
+
+body{
+}
+
+@font-face {
+    font-family: 'Lobster', cursive;
+    src: url('assets/fonts/Lobster/Lobster-Regular.ttf');
+}
+
+.csContainer {
+    height: 100%;
+}
+

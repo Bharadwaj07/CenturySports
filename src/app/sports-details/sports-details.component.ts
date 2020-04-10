@@ -5,7 +5,7 @@ import {Sports} from '../service/sports/sports';
 @Component({
   selector: 'app-sports-details',
   templateUrl: './sports-details.component.html',
-  styleUrls: ['./sports-details.component.css']
+  styleUrls: ['./sports-details.component.scss']
 })
 export class SportsDetailsComponent implements OnInit {
   private routeSub:any;
@@ -14,7 +14,7 @@ export class SportsDetailsComponent implements OnInit {
   country:string;
   overview:any;
   players:any[];
-  tabName:string;
+  tabName:string = 'overview';
   embed:any;
   news:any[] =['ind1.jpeg','ind2.jpeg','ind3.jpeg','ind4.jpeg']
   constructor(private route: ActivatedRoute,private _sports:SportsService) { }

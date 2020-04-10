@@ -1,36 +1,36 @@
 <div class="container">
   <div class="row">
-    <div class="col-2">
-      <div class="card" style="width: 10rem;margin-top: 20px;">
+    <div class="col-4 col-md-3 sportsElement">
+      <div class="card topTeamsCard">
         <div class="card-header">
           International Top Teams
         </div>
         <ul class="list-group list-group-flush" *ngFor="let sports of sports">
-          <li class="list-group-item" style="cursor: pointer;" >
+          <li class="list-group-item" >
             <!-- <a routerLink='/sports/{{url}}/{{sports.Country}}'>{{sports.Country}}</a> -->
             <a [routerLink]="['/sports',url,sports.Country]">{{sports.Country}}</a>
           </li>
         </ul>
       </div>
-      <div class="card" style="width: 10rem;margin-top: 20px;">
+      <div class="card featuredCard">
         <div class="card-header">
           Featured
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item" style="cursor: pointer;" >ICC Cricket World Cup</li>
-          <li class="list-group-item" style="cursor: pointer;" >ICC T20 World Cup</li>
-          <li class="list-group-item" style="cursor: pointer;" >ICC Champions Trophy</li>
-          <li class="list-group-item" style="cursor: pointer;" >IPL</li>
-          <li class="list-group-item" style="cursor: pointer;" >Bigbash</li>
+          <li class="list-group-item" >ICC Cricket World Cup</li>
+          <li class="list-group-item" >ICC T20 World Cup</li>
+          <li class="list-group-item" >ICC Champions Trophy</li>
+          <li class="list-group-item" >IPL</li>
+          <li class="list-group-item" >Bigbash</li>
         </ul>
       </div>
     </div>
-    <div class="col-7">
-      <div class="breadcrumb" style=" margin-left:40px;margin-top: 20px;">
-        Treanding.....
+    <div class="col-8 col-md-6 sportsElement">
+      <div class="breadcrumb">
+        Trending.....
       </div>
       <div *ngFor='let photos of photos'>
-        <div class="card treanding" style="width: 30rem; margin-left:40px;margin-top: 20px;">
+        <div class="card trending draw-border">
           <div class="card-body">
             <img src="assets/images/sports/{{photos}}" style="width: 100%;">
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget pharetra massa. Mauris vehicula, tortor in placerat efficitur, nulla nisl venenatis ligula, vitae accumsan dolor mi sed massa</p>
@@ -38,14 +38,19 @@
         </div>
       </div>
     </div>
-    <div class="col-2">
-      <div class="card" style="width: 10rem;margin-top: 20px;">
-        <div class="card-body">
-          <h5 class="card-title">Top Headlines</h5>
+    
+    <div class="divider"></div>
+    
+    <div class="col col-md-3 sportsElement">
+      <div class="card">
+        <div class="card-header">
+          Top Headlines
+        </div>
+        <div class="">
           <div class="card-text">
-            <ul>
-              <li>Lorem ipsum dolor sit amet</li>
-              <li>Lorem ipsum dolor sit amet</li>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" >Lorem ipsum dolor sit amet</li>
+              <li class="list-group-item" >Lorem ipsum dolor sit amet</li>
             </ul>
           </div>
         </div>

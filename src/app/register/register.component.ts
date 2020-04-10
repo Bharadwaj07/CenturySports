@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthenticationService } from '../service/authentication/authentication.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -9,7 +11,11 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private authenticationService: AuthenticationService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
       this.registerForm = this.formBuilder.group({
@@ -21,13 +27,19 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
-      this.submitted = true;
+    this.submitted = true;
 
-      // stop the process here if form is invalid
-      if (this.registerForm.invalid) {
-          return;
+    // stop the process here if form is invalid
+    if (this.registerForm.invalid) {
+        return;
+    }
+
+    this.authenticationService.register(this.registerForm.value)
+    .subscribe(
+      data => {
+        this.router.navigate(['/login'], { replaceUrl: true});
       }
+    )
 
-      alert('SUCCESS!!');
-  }
+}
 }

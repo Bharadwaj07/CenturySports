@@ -1,0 +1,49 @@
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-color: white;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    .topTeamsCard, .featuredCard {
+        margin-bottom: 10px;
+    
+        li {
+            cursor: pointer;
+            color: #333;
+    
+            a {
+                color: #333;
+            }
+        }
+    }
+    
+    .trending {
+        margin-top: 10px;
+        margin-bottom: 10px;;
+        cursor: pointer;
+    }
+
+    .divider {
+        display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        .sportsElement {
+            margin-top: 10px;
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+
+        .divider {
+            display: block;
+            width: 100%;
+            border-bottom: 4px solid #dfdfdf;
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
+
+}
+
+  
