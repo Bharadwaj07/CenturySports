@@ -7,6 +7,13 @@ nav {
     font-family: Lobster;
     font-size: 27px;
 }
+#navbarSupportedContent {
+    background-color: rgb(23, 26, 53);
+    margin-left: -15px;
+    padding: 15px;
+    margin-right: -16px;
+    z-index: 30;
+}
 
 .csp-header-search {
     height: 30px;

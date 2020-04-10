@@ -1,19 +1,21 @@
-@import 'src/variables.scss';
+@import "src/variables.scss";
 
 .famous-personalities-section {
     padding: 20px;
     margin: 50px auto;
 
     .famousPersonCard {
-
-        
+        margin-top: 10px;
         .card {
-            background: radial-gradient(circle at center,#fff 0,#f7f7f7 100%);
+            background: radial-gradient(circle at center, #fff 0, #f7f7f7 100%);
             padding: 1em 0 2em;
             height: 100%;
             margin: 5px;
             text-align: center;
-            .card-title{
+            border: 5px solid #fff;
+            box-shadow: 5px 5px #9893ae;
+
+            .card-title {
                 text-align: center;
             }
         }
@@ -22,5 +24,4 @@
             width: 150px;
         }
     }
-    
 }
