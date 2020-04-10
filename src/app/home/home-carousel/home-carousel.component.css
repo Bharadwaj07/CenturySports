@@ -6,4 +6,9 @@
 .carousel-item img {
     height: 500px;
     border: 7px solid white;
+    object-fit: cover;
+}
+
+.carousel-caption h3, .carousel-caption p {
+    color: #fff;
 }

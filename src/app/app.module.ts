@@ -16,6 +16,8 @@ import { AgmCoreModule } from '@agm/core';
 import { HeaderComponent } from './shell/header/header.component';
 import { FooterComponent } from './shell/footer/footer.component';
 import { HomeCarouselComponent } from './home/home-carousel/home-carousel.component';
+import { SportsNinjasComponent } from './home/sports-ninjas/sports-ninjas.component';
+import { DashboardJumbotronComponent } from './home/dashboard-jumbotron/dashboard-jumbotron.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { HomeCarouselComponent } from './home/home-carousel/home-carousel.compon
     HeaderComponent,
     FooterComponent,
     HomeCarouselComponent,
+    SportsNinjasComponent,
+    DashboardJumbotronComponent
   ],
   imports: [
     BrowserModule,
