@@ -13,7 +13,12 @@
             margin: 5px;
             text-align: center;
             border: 5px solid #fff;
-            box-shadow: 5px 5px #9893ae;
+            box-shadow: 2px 2px #9893ae;
+
+            &:hover {
+                box-shadow: 5px 5px mediumvioletred;
+                cursor: pointer;
+            }
 
             .card-title {
                 text-align: center;
