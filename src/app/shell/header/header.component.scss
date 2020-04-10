@@ -19,3 +19,23 @@ nav {
     height: 30px;
     margin-top: 5px;
 }
+
+.nav-link {
+    cursor: pointer;
+}
+
+.userNameText {
+    color: white;
+    margin: 5px 16px 16px 16px;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    font-family: Lobsters;
+    font-size: 20px;
+}
+
+@media screen and (max-width: 991px) {
+    .userNameText {
+        margin: 16px 16px 16px 0px;
+    }
+}

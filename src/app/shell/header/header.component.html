@@ -35,16 +35,33 @@
         </ul>
         <ul class="navbar-nav ">
             <input class="form-control csp-header-search" type="text" placeholder="Search" aria-label="Search">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="login/">Login</a>
-            </li>
+            
+            <span class="nav-item" *ngIf="isUserAuthenticated(); then authBlock else unauthBlock"></span>
 
-            <li class="nav-item">
-                <a class="nav-link" routerLink="register/">SignUp</a>
-            </li>
-            <!-- <li class="nav-item">
-          <a class="nav-link" routerLink="logout/">Logout</a>
-        </li> -->
+            <ng-template #authBlock>
+
+                <li class="nav-item">
+                    <p class="userNameText">Welcome {{ userDetails.name }}</p>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" (click)="handleLogout()">Logout</a>
+                </li>
+
+            </ng-template>
+
+            <ng-template #unauthBlock>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="login/">Login</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="register/">SignUp</a>
+                </li>
+
+            </ng-template>
+
         </ul>
     </div>
 </nav>
