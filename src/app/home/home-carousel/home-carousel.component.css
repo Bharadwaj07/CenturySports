@@ -9,6 +9,9 @@
     object-fit: cover;
 }
 
+.carousel-caption {
+    background: radial-gradient(black, transparent);
+}
 .carousel-caption h3, .carousel-caption p {
     color: #fff;
 }
