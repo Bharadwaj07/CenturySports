@@ -1,6 +1,6 @@
 <div class="container">
   <div class="card bg-dark text-white">
-      <img class="card-img teamdetail" src="assets/images/sports/{{country}}/ind6.jpg" alt="Card image">
+      <img class="card-img teamdetail" src="assets/images/sports/team/{{team.teamImg}}" alt="Card image">
       <div class="card-img-overlay"></div>
   </div>
   <div>
@@ -9,7 +9,7 @@
       <li class="breadcrumb-item" (click)="selectedTab('overview')">Overview</li>
       <li class="breadcrumb-item" (click)="selectedTab('player')">Player</li>
       <li class="breadcrumb-item" (click)="selectedTab('news')">News</li>
-      <li class="breadcrumb-item" (click)="selectedTab('photos')">Photos</li>
+      <!-- <li class="breadcrumb-item" (click)="selectedTab('photos')">Photos</li> -->
       <li class="breadcrumb-item" (click)="selectedTab('fixture')">Fixtures</li>
     </ol>
     
@@ -43,20 +43,17 @@
        </div>
       </div>
       <div class="newsSection" *ngSwitchCase="'news'">
-          <div class="newsBox" *ngFor='let n of news'>
+          <div class="newsBox" *ngFor='let news of team.news'>
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title">{{news.newsTitle}}</h5>
+                <p class="card-text">{{news.news}}</p>
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
               </div>
-              <img class="card-img-bottom" src="..." alt="Card image cap">
+              <!-- <img class="card-img-bottom" src="..." alt="Card image cap"> -->
             </div>
           </div>
       </div> 
-      <div *ngSwitchCase="'photos'">
-        
-      </div>
       <div *ngSwitchCase="'fixture'">
         <div class="row">
           <div class="col-7">
@@ -81,9 +78,10 @@
             <div class="mapouter" style="height: 100px;"><div class="gmap_canvas">
               <iframe [src]="('https://maps.google.com/maps?q=')+embed |safe" width="100px"height="350" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
               </iframe>
-              <!-- <iframe  id="gmap_canvas" [src]="('https://maps.google.com/maps?q=')+embed |safe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-              </iframe> -->
+               <iframe  id="gmap_canvas" [src]="('https://maps.google.com/maps?q=')+embed |safe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+              </iframe> 
             </div> 
+            
           </div>
         </div> 
       </div>
