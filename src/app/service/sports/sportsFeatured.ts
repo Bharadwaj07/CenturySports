@@ -1,4 +1,4 @@
-export class SportsFeatured{
-    "featuredTopic":string;
-    "featuredLink":string;
+export class SportsFeatured {
+    "featuredTopic": string;
+    "featuredLink": string;
 }

@@ -7,10 +7,10 @@
           Best Highlights </label>
         <select class="form-control text-primary font-weight-bold" id="exampleFormControlSelect1"
           (change)="onChange($event)">
-          <option>Option</option>
-          <option value="1">Cricket</option>
-          <option value="2">Football</option>
-          <option value="3">Hockey</option>
+          <option>Select Sport</option>
+          <option value="cricket">Cricket</option>
+          <option value="football">Football</option>
+          <option value="hockey">Hockey</option>
         </select>
       </div>
       <table class="table table-hover table-striped table-bordered highlightsTable table-responsive-md table-sm">
@@ -23,18 +23,21 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let highligh of highlighs" class="table-{{ highligh.class }}" (click)="select(highligh)">
+          <tr *ngIf="!highlights">
+            <td colspan="4">No data found.</td>
+          </tr>
+          <tr *ngFor="let highlight of highlights" class="table-{{ highlight.class }}" (click)="select(highlight)">
             <td class="text-secondary" ><i
                 class="fab fa-youtube text-danger"></i></td>
-            <td class="text-secondary" >{{ highligh.sl_no }}</td>
-            <td class="text-primary" >{{ highligh.Details }}</td>
-            <td class="text-info" >{{ highligh.title }}</td>
+            <td class="text-secondary" >{{ highlight.sl_no }}</td>
+            <td class="text-primary" >{{ highlight.details }}</td>
+            <td class="text-info" >{{ highlight.title }}</td>
           </tr>
         </tbody>
       </table>
     </div>
     <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 pt-4" *ngIf="highlightsSelected">
-      <div class="card bg-light mb-3 text-center">
+      <div class="card bg-light mb-3 text-center highlightDetailsHeading">
         <div class="card-body">
           <h5 class="card-title text-primary">{{ highlightsSelected.Details }}</h5>
           <h6 class="card-title text-info">{{ highlightsSelected.title }}</h6>
