@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from '../http/http.service';
-import { map } from 'rxjs/operators'
-import { of } from 'rxjs';
+import { map, first } from 'rxjs/operators'
+import { of, Observable, from } from 'rxjs';
 import { MessagingService } from '../messaging/messaging.service';
+import { AngularFirestore} from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,8 @@ export class AuthenticationService {
   constructor(
     private router: Router,
     private messagingService: MessagingService,
-    private http: HttpService
+    private http: HttpService,
+    private firestore :AngularFirestore
   ) {
     const savedUserDetails = sessionStorage.getItem(this.sessionKey);
     if(savedUserDetails) {
@@ -24,34 +26,150 @@ export class AuthenticationService {
     }
   }
 
-  login(loginDetails) {
-    // let loginUrl = "some/login/url";
-    // return this.http.postData(loginUrl, loginDetails)
+  login(loginDetails) :Observable<any>{
+   // console.log(loginDetails.username)
+    // this.firestore.collection('users',ref =>ref.where('username','==',loginDetails.username)).valueChanges().forEach(usersSnapshot =>{
+    //   usersSnapshot.forEach(user =>{
+        
+  
+    //   })
+    // })
+
+
+    // return from(this.firestore
+    //   .collection<any>(
+    //       'users', 
+    //       ref => ref
+    //         .where('email', '==', loginDetails.username)
+    //         .where('password', '==', loginDetails.password)
+    //   ).valueChanges()
     //   .pipe(
-    //     map( user => {
-    //       if(user) {
-    //           this.setUserDetails(user);
+    //     map(
+    //       actions => actions.map(a => {
+    //         // const data = a.payload.doc.data() as AccountDeposit;
+    //         // const id = a.payload.doc.id;
+    //         // return { id, ...data };
+    //         console.log(' data from login - a')
+    //         console.log(a)
+
+    //         return a;
     //       }
-    //       return user;
-    //     })
+    //     )
+    //   )
+    //   )
+    // )
+
+    // return from(this.firestore
+    //   .collection<any>(
+    //       'users', 
+    //       ref => ref
+    //         .where('email', '==', loginDetails.username)
+    //         .where('password', '==', loginDetails.password)
+    //   ).valueChanges()
+    // )
+
+    return from(this.firestore
+      .collection<any>(
+          'users', 
+          ref => ref
+            .where('email', '==', loginDetails.username)
+            .where('password', '==', loginDetails.password)
+      )
+      .valueChanges()
+      .pipe(
+        map(
+          userData => {
+            if(userData === undefined || userData.length == 0) {
+              return null;
+            }
+            let userDataToBeStored = {
+              ...userData[0],
+              password: ''
+            }
+            this.messagingService.sendUserDetails(userDataToBeStored);
+            this.setUserDetails(userDataToBeStored)
+            return userDataToBeStored;
+          }
+        )
+      )
+
+    // .then(
+    //     res => {
+    //       console.log('res from set-')
+    //       console.log(res)
+    //       return of({res: true})
+    //     }, 
+    //     err => {
+    //         console.log('Err Ocurred: ' + err)
+    //         return of(false)
+    //     }
     //   )
 
-    // mocking resp
-    let user = {
-      name: 'John',
-      lastName: 'Doe',
-      dob: '12/12/1990'
-    }
-    
-    this.messagingService.sendUserDetails(user);
-    this.setUserDetails(user)
-    return of(user);
+      // .pipe(
+      //   map(
+      //     userData => {
+      //       let userDataToBeStored = {
+      //         ...userData[0],
+      //         password: ''
+      //       }
+      //       this.messagingService.sendUserDetails(userDataToBeStored);
+      //       this.setUserDetails(userDataToBeStored)
+      //       return userDataToBeStored
+      //     }
+      //   )
+      // )
+      
+
+
+
+      //   .then(
+      //   res => {
+      //     console.log('res from set-')
+      //     console.log(res)
+      //     return of({res: true})
+      //   }, 
+      //   err => {
+      //       console.log('Err Ocurred: ' + err)
+      //       return of(false)
+      //   }
+      // )
+
+
+      // .forEach(
+      //   usersSnapshot => {
+      //     usersSnapshot.forEach(
+      //       user => {
+      //         console.log('data receeived from loginservice')
+      //         console.log(user)
+
+      //         return of(user)
+      //       }
+      //     )
+      //   }
+      // )
+      )
+  
   }
 
-  register(registerDetails) {
+  register(registerDetails): Observable<any> {
+    // const id = this.firestore.createId();
+    // const item: any = { id, ...registerDetails };
+    return from(this.firestore.collection('users').add(registerDetails))
+      // .then(
+      //   res => {
+      //     console.log('res from set-')
+      //     console.log(res)
+      //     return of({res: true})
+      //   }, 
+      //   err => {
+      //       console.log('Err Ocurred: ' + err)
+      //       return of(false)
+      //   }
+      // );
+    
     // let registerUrl = "some/register/url";
     // return this.http.postData(registerUrl, registerDetails)
-    return of(true);
+    // return of(true);
   }
 
   logout() {
@@ -59,7 +177,7 @@ export class AuthenticationService {
     this.messagingService.sendUserDetails(user);
     this.setUserDetails(user);
     sessionStorage.removeItem(this.sessionKey);
-    this.router.navigate(['/login']);
+    this.router.navigate(['/']);
   }
 
   isAuthenticated() {
