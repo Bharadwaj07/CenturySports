@@ -1,5 +1,6 @@
 <div class="container">
   <div class="row">
+
     <div class="col-4 col-md-3 sportsElement">
       <div class="card topTeamsCard">
         <div class="card-header csp-card-highlight">
@@ -11,17 +12,19 @@
           </li>
         </ul>
       </div>
+
       <div class="card featuredCard">
         <div class="card-header csp-card-highlight">
           Featured
         </div>
         <ul class="list-group list-group-flush" *ngFor='let featured of sportsFeatured'>
           <li class="list-group-item"><a href="{{featured.featuredLink}}">
-            {{featured.featuredtopic}}
-          </a></li>
+              {{featured.featuredtopic}}
+            </a></li>
         </ul>
       </div>
     </div>
+
     <div class="col-8 col-md-6 sportsElement">
       <div class="breadcrumb csp-card-highlight">
         Trending Events

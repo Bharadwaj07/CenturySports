@@ -23,7 +23,7 @@ export class SportsService {
   sportsTrending: SportsTrending[];
   sportsTopHeadlines: SportsTopHeadLines[];
   sportsFeatured: SportsFeatured[];
-  
+
   constructor(
     private firestore: AngularFirestore
   ) { }
@@ -38,10 +38,44 @@ export class SportsService {
     return this.sportsTrending
   }
 
-  getSportsFeatured(url: string): SportsFeatured[] {
-    this.sportsFeatured = sportsFeatureData[url]
-    return this.sportsFeatured
+  getSportsFeatured(sport: string): Observable<SportsFeatured[]> {
+    return from(
+      this.firestore
+        .collection<any>(
+          'features',
+          ref => ref.where('sport', '==', sport)
+        )
+        .valueChanges()
+        .pipe(
+          map(
+            featuredData => {
+              return featuredData;
+            }
+          )
+        )
+    )
   }
+
+  setSportsFeatured(sportFeaturedData: SportsFeatured): Observable<any> {
+    return from(this.firestore.collection('features').add(sportFeaturedData))
+  }
+
+  deleteSportsFeatured(sport) {
+    return from(
+      this.firestore
+        .collection(
+          'features',
+          ref => ref.where('sport', '==', sport)
+        )
+        .get()
+        .forEach(data => {
+          data.forEach(element => {
+            element.ref.delete();
+          })
+        })
+    )
+  }
+
 
   getSportsTopHeadlines(sport: string): Observable<SportsTopHeadLines[]> {
     return from(this.firestore
@@ -62,6 +96,22 @@ export class SportsService {
 
   setHeadlines(headlinesData: SportsTopHeadLines) {
     return from(this.firestore.collection('headlines').add(headlinesData))
+  }
+
+  deleteSportsTopHeadlines(sport) {
+    return from(
+      this.firestore
+        .collection(
+          'headlines',
+          ref => ref.where('sport', '==', sport)
+        )
+        .get()
+        .forEach(data => {
+          data.forEach(element => {
+            element.ref.delete();
+          })
+        })
+    )
   }
 
 }

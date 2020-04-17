@@ -26,8 +26,6 @@ export class HeaderComponent implements OnInit {
         let dataObj;
         dataObj = typeof userData == 'string' ? JSON.parse(userData) : userData;
         this.userDetails = dataObj;
-
-        console.log(dataObj);
       }
     )
   }
