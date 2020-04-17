@@ -6,9 +6,6 @@ import {sportsTrendingData} from './sportsTrendingData';
 import {SportsTrending} from './sportsTrendingModel';
 import {SportsTopHeadLines} from './sportsTopHeadLinesModel';
 import {sportsTopHeadLinesData} from './sportsTopHeadLinesData';
-import {sportsFeatureData} from './sportsFeaturedData';
-import {SportsFeatured} from './sportsFeatured';
-
 
 
 @Injectable({
@@ -19,7 +16,6 @@ export class SportsService {
   team :[any];
   sportsTrending :SportsTrending[];
   sportsTopHeadlines :SportsTopHeadLines[];
-  sportsFeatured :SportsFeatured[];
   constructor() { }
   getSports(url:string):Sports[]{
     //console.log(SPORTS[url])
@@ -28,18 +24,13 @@ export class SportsService {
      return this.sports;
     }
 
-   getSportsTrending(url:string): SportsTrending[]{
-        this.sportsTrending=sportsTrendingData[url]
+   getSportsTrending(): SportsTrending[]{
+        this.sportsTrending=sportsTrendingData
         return this.sportsTrending
    }
 
-   getSportsFeatured(url:string):SportsFeatured[]{
-    this.sportsFeatured = sportsFeatureData[url]
-    return this.sportsFeatured
-   }
-
-   getSportsTopHeadlines(url:string): SportsTopHeadLines[]{
-    this.sportsTopHeadlines=sportsTopHeadLinesData[url]
+   getSportsTopHeadlines(): SportsTopHeadLines[]{
+    this.sportsTopHeadlines=sportsTopHeadLinesData
     return this.sportsTopHeadlines
 }
 }

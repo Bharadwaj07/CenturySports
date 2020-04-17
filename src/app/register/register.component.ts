@@ -18,12 +18,12 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
-    });
+      this.registerForm = this.formBuilder.group({
+          firstName: ['', Validators.required],
+          lastName: ['', Validators.required],
+          email: ['', [Validators.required, Validators.email]],
+          password: ['', [Validators.required, Validators.minLength(6)]]
+      });
   }
 
   onSubmit() {
@@ -31,16 +31,15 @@ export class RegisterComponent implements OnInit {
 
     // stop the process here if form is invalid
     if (this.registerForm.invalid) {
-      return;
+        return;
     }
 
     this.authenticationService.register(this.registerForm.value)
-      .subscribe(
-        data => {
-          alert('Registration is successful. Please login!')
-          this.router.navigate(['/login'], { replaceUrl: true });
-        }
-      )
+    .subscribe(
+      data => {
+        this.router.navigate(['/login'], { replaceUrl: true});
+      }
+    )
 
-  }
+}
 }

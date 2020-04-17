@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
       this.loginForm = this.formBuilder.group({
-          username: ['', [Validators.required, Validators.email]],
+          username: ['', Validators.required],
           password: ['', [Validators.required, Validators.minLength(6)]]
       });
   }
@@ -40,11 +40,8 @@ export class LoginComponent implements OnInit {
       this.authenticationService.login(this.loginForm.value)
       .subscribe(
         userDetails => {
-          if(userDetails) {
-            this.router.navigate(['/'], { replaceUrl: true});
-          } else {
-            alert('Wrong username and password details entered!')
-          }
+          console.log('Logged in as ' + userDetails.name);
+          this.router.navigate(['/'], { replaceUrl: true});
         }
       )
   }

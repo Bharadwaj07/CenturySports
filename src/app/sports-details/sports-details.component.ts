@@ -16,9 +16,10 @@ export class SportsDetailsComponent implements OnInit {
   players:any[];
   tabName:string = 'overview';
   embed:any;
+  news:any[] =['ind1.jpeg','ind2.jpeg','ind3.jpeg','ind4.jpeg']
   constructor(private route: ActivatedRoute,private _sports:SportsService) { }
   selectedTab(tabName:string){
-    //console.log(tabName);
+    console.log(tabName);
     this.tabName =tabName;
   }
   selectVenue(item:any){
