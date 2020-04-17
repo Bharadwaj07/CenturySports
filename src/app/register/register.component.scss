@@ -2,24 +2,30 @@
     height: 100%;
     width: 100%;
     overflow-y: auto;
-    background-image: linear-gradient(-45deg, #FFC796 0%, #FF6B95 100%);
 
     .container {
         height: 100%;
+        min-height: 600px;
 
-        .row {
+        .row.registerLogin {
             height: 100%;
+            min-height: 700px;
 
             .entryWrapper {
                 align-self: center;
-                border-radius: 25px;
-                background: #fafafa;
+                background: #fff;
                 padding: 30px;
                 margin-bottom: 20px;
                 
                 .csp-btn-primary {
                     background-color: #e7717d;
                     border: 0px;
+                }
+
+                .csp-link-primary {
+                    color: #FF6B95;;
+                    border: 0px;
+                    margin: 5px;
                 }
             }
         }

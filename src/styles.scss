@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+@import "app/core/utils/css/hover-style.scss";
+
+html, body {
+    position: relative;
+}
+
+@font-face {
+    font-family: 'Lobster', cursive;
+    src: url('assets/fonts/Lobster/Lobster-Regular.ttf');
+}
+
+.csContainer {
+    height: 100%;
+}
+
+.csp-card-highlight {
+    // background: linear-gradient(to right, #2a5298fc, #1e3c72d9);
+    // color: #fff;
+    font-weight: 600;
+    background-color: #fafafa;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}   
+

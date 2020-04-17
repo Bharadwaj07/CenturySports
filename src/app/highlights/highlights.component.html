@@ -1,38 +1,44 @@
-<div class="row pb-4">
+<div class="container">
+
+  <div class="row pb-4">
     <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
       <div class="form-group">
         <label class="text-primary font-weight-bold text-center" for="exampleFormControlSelect1">
           Best Highlights </label>
-        <select class="form-control text-primary font-weight-bold" id="exampleFormControlSelect1" (change)="onChange($event)">
-          <option >Option</option>
-          <option value="1">Cricket</option>
-          <option value="2">Football</option>
-          <option value="3">Hockey</option>
+        <select class="form-control text-primary font-weight-bold" id="exampleFormControlSelect1"
+          (change)="onChange($event)">
+          <option>Select Sport</option>
+          <option value="cricket">Cricket</option>
+          <option value="football">Football</option>
+          <option value="hockey">Hockey</option>
         </select>
       </div>
-      <table class="table table-hover table-striped table-bordered table-responsive-md table-sm">
+      <table class="table table-hover table-striped table-bordered highlightsTable table-responsive-md table-sm">
         <thead>
           <tr>
-            <th class="text-secondary" style="text-align:center;">Clip</th>
-            <th class="text-secondary" style="text-align:center;">SL no</th>
-            <th class="text-primary" style="text-align:center;">Details</th>
-            <th class="text-info" style="cursor: pointer;text-align:center;">Title</th>
+            <th class="text-secondary" >Clip</th>
+            <th class="text-secondary" >SL no</th>
+            <th class="text-primary" >Details</th>
+            <th class="text-info" >Title</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let highligh of highlighs" class="table-{{ highligh.class }}" (click)="select(highligh)">
-            <td class="text-secondary" style="cursor: pointer;text-align:center"><i
+          <tr *ngIf="!highlights">
+            <td colspan="4">No data found.</td>
+          </tr>
+          <tr *ngFor="let highlight of highlights" class="table-{{ highlight.class }}" (click)="select(highlight)">
+            <td class="text-secondary" ><i
                 class="fab fa-youtube text-danger"></i></td>
-            <td class="text-secondary" style="cursor: pointer;text-align:center">{{ highligh.sl_no }}</td>
-            <td class="text-primary" style="cursor: pointer;text-align:center">{{ highligh.Details }}</td>
-            <td class="text-info" style="cursor: pointer;text-align:center">{{ highligh.title }}</td>
+            <td class="text-secondary" >{{ highlight.sl_no }}</td>
+            <td class="text-primary" >{{ highlight.details }}</td>
+            <td class="text-info" >{{ highlight.title }}</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 pt-4"  *ngIf="highlightsSelected">
-      <div class="card bg-light mb-3 text-center">
-        <div class="card-body" >
+    <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 pt-4" *ngIf="highlightsSelected">
+      <div class="card bg-light mb-3 text-center highlightDetailsHeading">
+        <div class="card-body">
           <h5 class="card-title text-primary">{{ highlightsSelected.Details }}</h5>
           <h6 class="card-title text-info">{{ highlightsSelected.title }}</h6>
 
@@ -45,8 +51,10 @@
         </div>
       </div>
       <div *ngIf="highlightsSelected" class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" [src]="('https://www.youtube.com/embed/' + highlightsSelected.link) | safe"
-          allowfullscreen></iframe>
+        <iframe class="embed-responsive-item"
+          [src]="('https://www.youtube.com/embed/' + highlightsSelected.link) | safe" allowfullscreen></iframe>
       </div>
     </div>
+  </div>
+  
 </div>

@@ -7,8 +7,8 @@ import { HighlightsComponent } from './highlights/highlights.component';
 import { SportsComponent } from './sports/sports.component';
 import { SportsDetailsComponent } from './sports-details/sports-details.component';
 import { LogoutComponent } from './logout/logout.component';
-
-import { from } from 'rxjs';
+import { LiveComponent } from './live/live.component';
+// import { from } from 'rxjs';
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'register',component:RegisterComponent},
@@ -17,6 +17,7 @@ const routes: Routes = [
   {path:'highlights',component:HighlightsComponent},
   {path:'logout',component:LogoutComponent},
   { path: 'login', component: LoginComponent },
+  {path:'live',component:LiveComponent},
 ];
 
 @NgModule({

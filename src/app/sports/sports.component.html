@@ -1,19 +1,59 @@
-<h1>
-    {{ url  }} Teams
-</h1>
-<div class="container" style="margin-top: 50px;">
-  <div class="row" *ngFor="let sports of sports" style="display: inline-block; margin:20px;">
-    <div class="col-3">
-      <div class="card" style="width: 18rem;">
-        <img src="{{sports.logo}}" class="card-img-top" alt="..." style="height: 100px;">
-        <div class="card-body">
-          <h5 class="card-title">{{sports.Country}}</h5>
-          <a routerLink='/sports/{{url}}/{{sports.Country}}' class="btn btn-primary">View Players</a>
+<div class="container">
+  <div class="row">
+
+    <div class="col-4 col-md-3 sportsElement">
+      <div class="card topTeamsCard">
+        <div class="card-header csp-card-highlight">
+          International Top Teams
+        </div>
+        <ul class="list-group list-group-flush" *ngFor="let sports of sports">
+          <li class="list-group-item">
+            <a [routerLink]="['/sports',url,sports.Country]">{{sports.Country}}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card featuredCard">
+        <div class="card-header csp-card-highlight">
+          Featured
+        </div>
+        <ul class="list-group list-group-flush" *ngFor='let featured of sportsFeatured'>
+          <li class="list-group-item"><a href="{{featured.featuredLink}}">
+              {{featured.featuredtopic}}
+            </a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-8 col-md-6 sportsElement">
+      <div class="breadcrumb csp-card-highlight">
+        Trending Events
+      </div>
+      <div *ngFor='let sportTrend of sportsTrending'>
+        <div class="card trending draw-border">
+          <div class="card-body">
+            <img src="assets/images/sports/{{sportTrend.imgUrl}}" style="width: 100%;">
+            <p class="card-text">{{sportTrend.displayText}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="col col-md-3 sportsElement">
+      <div class="card">
+        <div class="card-header csp-card-highlight">
+          Top Headlines
+        </div>
+        <div class="">
+          <div class="card-text">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" *ngFor="let headLine of sportsTopHeadLines">{{headLine.headLineData}}</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-    
-  
- 
