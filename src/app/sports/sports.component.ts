@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SportsService } from '../service/sports/sports.service';
-import { Sports } from '../service/sports/sports';
+import { SportsDetails } from '../service/sports/sports';
 import { ActivatedRoute } from '@angular/router';
 import { SportsTrending } from '../service/sports/sportsTrendingModel';
 import { SportsTopHeadLinesField } from '../service/sports/sportsTopHeadLinesModel';
@@ -11,7 +11,7 @@ import { SportsFeaturedField } from '../service/sports/sportsFeatured';
   styleUrls: ['./sports.component.scss']
 })
 export class SportsComponent implements OnInit {
-  sports: Sports[];
+  sports: SportsDetails[];
   url: string;
   photos: any[] = ["sp1.jpeg", "sp2.jpeg", "sp3.jpeg", "sp4.jpeg"];
   sportsTrending: SportsTrending[];

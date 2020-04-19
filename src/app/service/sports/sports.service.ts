@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Sports } from './sports';
+import { SportsDetails } from './sports';
 import { SPORTS } from './sportsData';
 import { sportsTrendingData } from './sportsTrendingData';
 import { SportsTrending } from './sportsTrendingModel';
@@ -18,7 +18,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SportsService {
-  sports: Sports[];
+  sports: SportsDetails[];
   team: [any];
   sportsTrending: SportsTrending[];
   sportsTopHeadlines: SportsTopHeadLines[];
@@ -28,8 +28,12 @@ export class SportsService {
     private firestore: AngularFirestore
   ) { }
 
-  getSports(url: string): Sports[] {
-    this.sports = SPORTS[url]
+  getSports(sport: string): SportsDetails[] {
+    const selectedSportData = SPORTS.find( function(sportItem) {
+      return sportItem.sport == sport; 
+    }); 
+    
+    this.sports = selectedSportData.details
     return this.sports;
   }
 

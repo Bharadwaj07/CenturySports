@@ -1,5 +1,5 @@
 export class SportsFeaturedField {
-    "featuredTopic": string;
+    "featuredtopic": string;
     "featuredLink": string;
 }
 

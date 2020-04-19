@@ -9,23 +9,19 @@
       <li class="breadcrumb-item" (click)="selectedTab('overview')">Overview</li>
       <li class="breadcrumb-item" (click)="selectedTab('player')">Player</li>
       <li class="breadcrumb-item" (click)="selectedTab('news')">News</li>
-      <!-- <li class="breadcrumb-item" (click)="selectedTab('photos')">Photos</li> -->
       <li class="breadcrumb-item" (click)="selectedTab('fixture')">Fixtures</li>
     </ol>
     
     <div [ngSwitch]='tabName'>
       <div *ngSwitchCase="'overview'">
         <div class="row">
-          <div class="col-3" *ngFor="let item of team.overview | keyvalue">
+          <div class="col-4" *ngFor="let item of team.overview | keyvalue">
             <div class="card" >
               <div class="card-body">
-                <span class="card-title badge badge-secondary"> {{item.key}}</span>
+                <span class="card-title badge badge-secondary"> {{item.key | uppercase}}</span>
                   <div *ngFor='let i of item.value | keyvalue'>
-                    <!-- <div *ngIf="i.key =='Rank'">
-                      <h1>{{i.value}}</h1>
-                    </div> -->
                     <dl class="row">
-                      <dt class="col-6">{{i.key}}</dt>
+                      <dt class="col-6">{{i.key | uppercase}}:</dt>
                       <dd class="col-6">{{i.value}}</dd>
                     </dl>
                   </div>
@@ -35,10 +31,10 @@
         </div>
       </div>
       <div class='row playerSection' *ngSwitchCase="'player'">
-        <div class="col-3 playerBox" *ngFor="let player of team.Player">
+        <div class="col-3 playerBox" *ngFor="let player of team.players">
           <div class="card">
             <img src="{{player.imgUrl}}">
-            <strong>Name: {{player.Name}}</strong>
+            <strong>Name: {{player.name}}</strong>
           </div>
        </div>
       </div>
@@ -68,7 +64,7 @@
               <tbody>
                 <tr *ngFor="let item of team.fixture" class="table-{{ item.class }}">
                   <td class="text-secondary" style="cursor: pointer;text-align:center">{{item.date}}</td>
-                  <td class="text-primary" style="cursor: pointer;text-align:center">{{ item.Details }}</td>
+                  <td class="text-primary" style="cursor: pointer;text-align:center">{{ item.details }}</td>
                   <td class="text-info" style="cursor: pointer;text-align:center" (click)='selectVenue(item)'>{{ item.venue }}</td>
                 </tr>
               </tbody>
