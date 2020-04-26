@@ -35,6 +35,14 @@
     .playerBox {
         margin-top: 5px;
         margin-bottom: 5px;
+
+        .playerImage {
+            height: 200px;
+        }
+
+        .card-body {
+            min-height: 90px;
+        }
     }
 }
 
@@ -42,4 +50,8 @@
     .newsBox {
         padding: 10px;
     }
+}
+
+.breadcrumb-item{
+    cursor: pointer;
 }

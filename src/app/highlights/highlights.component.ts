@@ -1,30 +1,46 @@
 import { Component, OnInit } from '@angular/core';
-import {HighlightsService} from '../service/highlights/highlights.service';
-import {Highlights} from '../service/highlights/highlights'
+import { HighlightsService } from '../service/highlights/highlights.service';
+import { Highlights } from '../service/highlights/highlights'
+import { first } from 'rxjs/operators';
 @Component({
   selector: 'app-highlights',
   templateUrl: './highlights.component.html',
   styleUrls: ['./highlights.component.scss']
 })
 export class HighlightsComponent implements OnInit {
-  highlighs: Highlights[];
+  highlights: Highlights[];
   highlightsSelected: Highlights;
-  sportSelected: number;
+  sportSelected: string = '';
+
   constructor(private _highlights: HighlightsService) { }
 
-  ngOnInit(): void {
-    this.getHighlights(this.sportSelected);
+  ngOnInit(): void {}
+
+  deleteHighlights() {
+    this._highlights.deleteHighlights('hockey').subscribe()
   }
-  getHighlights(index: number): void {
-    this.highlighs = this._highlights.getHighlights(index);
+
+  getHighlights(sport: string): void {
+    this._highlights.getHighlights(sport)
+      .subscribe(
+        data => {
+          this.highlights = data && data[0] && data[0].items;
+        }
+      )
   }
+
   select(highlight: Highlights) {
     this.highlightsSelected = highlight;
   }
 
   onChange($event: any) {
     this.sportSelected = $event.target.value;
-    this.highlighs = this._highlights.getHighlights(this.sportSelected);
+    this.getHighlights(this.sportSelected);
     this.highlightsSelected = null;
   }
+
+  saveHighlightData(highlightData) {
+    this._highlights.setHighlights(highlightData).subscribe()
+  }
+
 }

@@ -9,7 +9,6 @@ export class LiveService {
 
   constructor() { }
   getsportDetails(){
-    //console.log("url is"+ url)
     this.live = LIVE;
     return this.live;
   }

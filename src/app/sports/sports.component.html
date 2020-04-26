@@ -1,31 +1,33 @@
 <div class="container">
   <div class="row">
+
     <div class="col-4 col-md-3 sportsElement">
       <div class="card topTeamsCard">
-        <div class="card-header">
+        <div class="card-header csp-card-highlight">
           International Top Teams
         </div>
         <ul class="list-group list-group-flush" *ngFor="let sports of sports">
           <li class="list-group-item">
-            <!-- <a routerLink='/sports/{{url}}/{{sports.Country}}'>{{sports.Country}}</a> -->
-            <a [routerLink]="['/sports',url,sports.Country]">{{sports.Country}}</a>
+            <a [routerLink]="['/sports', url, sports.country]">{{sports.country}}</a>
           </li>
         </ul>
       </div>
+
       <div class="card featuredCard">
-        <div class="card-header">
+        <div class="card-header csp-card-highlight">
           Featured
         </div>
         <ul class="list-group list-group-flush" *ngFor='let featured of sportsFeatured'>
           <li class="list-group-item"><a href="{{featured.featuredLink}}">
-            {{featured.featuredtopic}}
-          </a></li>
+              {{featured.featuredtopic}}
+            </a></li>
         </ul>
       </div>
     </div>
+
     <div class="col-8 col-md-6 sportsElement">
-      <div class="breadcrumb">
-        Trending.....
+      <div class="breadcrumb csp-card-highlight">
+        Trending Events
       </div>
       <div *ngFor='let sportTrend of sportsTrending'>
         <div class="card trending draw-border">
@@ -41,14 +43,13 @@
 
     <div class="col col-md-3 sportsElement">
       <div class="card">
-        <div class="card-header">
+        <div class="card-header csp-card-highlight">
           Top Headlines
         </div>
         <div class="">
           <div class="card-text">
             <ul class="list-group list-group-flush">
               <li class="list-group-item" *ngFor="let headLine of sportsTopHeadLines">{{headLine.headLineData}}</li>
-
             </ul>
           </div>
         </div>
