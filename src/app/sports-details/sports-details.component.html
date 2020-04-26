@@ -33,8 +33,10 @@
       <div class='row playerSection' *ngSwitchCase="'player'">
         <div class="col-3 playerBox" *ngFor="let player of team.players">
           <div class="card">
-            <img src="{{player.imgUrl}}">
-            <strong>Name: {{player.name}}</strong>
+            <img class="card-img-top playerImage" src="{{player.imgUrl}}">
+            <div class="card-body text-center">
+              <p class="card-text"><strong>{{player.name}}</strong></p>
+            </div>
           </div>
        </div>
       </div>
