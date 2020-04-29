@@ -27,46 +27,7 @@ export class AuthenticationService {
   }
 
   login(loginDetails) :Observable<any>{
-   // console.log(loginDetails.username)
-    // this.firestore.collection('users',ref =>ref.where('username','==',loginDetails.username)).valueChanges().forEach(usersSnapshot =>{
-    //   usersSnapshot.forEach(user =>{
-        
-  
-    //   })
-    // })
-
-
-    // return from(this.firestore
-    //   .collection<any>(
-    //       'users', 
-    //       ref => ref
-    //         .where('email', '==', loginDetails.username)
-    //         .where('password', '==', loginDetails.password)
-    //   ).valueChanges()
-    //   .pipe(
-    //     map(
-    //       actions => actions.map(a => {
-    //         // const data = a.payload.doc.data() as AccountDeposit;
-    //         // const id = a.payload.doc.id;
-    //         // return { id, ...data };
-    //         console.log(' data from login - a')
-    //         console.log(a)
-
-    //         return a;
-    //       }
-    //     )
-    //   )
-    //   )
-    // )
-
-    // return from(this.firestore
-    //   .collection<any>(
-    //       'users', 
-    //       ref => ref
-    //         .where('email', '==', loginDetails.username)
-    //         .where('password', '==', loginDetails.password)
-    //   ).valueChanges()
-    // )
+ 
 
     return from(this.firestore
       .collection<any>(
@@ -93,83 +54,15 @@ export class AuthenticationService {
         )
       )
 
-    // .then(
-    //     res => {
-    //       console.log('res from set-')
-    //       console.log(res)
-    //       return of({res: true})
-    //     }, 
-    //     err => {
-    //         console.log('Err Ocurred: ' + err)
-    //         return of(false)
-    //     }
-    //   )
-
-      // .pipe(
-      //   map(
-      //     userData => {
-      //       let userDataToBeStored = {
-      //         ...userData[0],
-      //         password: ''
-      //       }
-      //       this.messagingService.sendUserDetails(userDataToBeStored);
-      //       this.setUserDetails(userDataToBeStored)
-      //       return userDataToBeStored
-      //     }
-      //   )
-      // )
-      
-
-
-
-      //   .then(
-      //   res => {
-      //     console.log('res from set-')
-      //     console.log(res)
-      //     return of({res: true})
-      //   }, 
-      //   err => {
-      //       console.log('Err Ocurred: ' + err)
-      //       return of(false)
-      //   }
-      // )
-
-
-      // .forEach(
-      //   usersSnapshot => {
-      //     usersSnapshot.forEach(
-      //       user => {
-      //         console.log('data receeived from loginservice')
-      //         console.log(user)
-
-      //         return of(user)
-      //       }
-      //     )
-      //   }
-      // )
+   
       )
   
   }
 
   register(registerDetails): Observable<any> {
-    // const id = this.firestore.createId();
-    // const item: any = { id, ...registerDetails };
-    return from(this.firestore.collection('users').add(registerDetails))
-      // .then(
-      //   res => {
-      //     console.log('res from set-')
-      //     console.log(res)
-      //     return of({res: true})
-      //   }, 
-      //   err => {
-      //       console.log('Err Ocurred: ' + err)
-      //       return of(false)
-      //   }
-      // );
     
-    // let registerUrl = "some/register/url";
-    // return this.http.postData(registerUrl, registerDetails)
-    // return of(true);
+    return from(this.firestore.collection('users').add(registerDetails))
+     
   }
 
   logout() {
@@ -183,9 +76,25 @@ export class AuthenticationService {
   isAuthenticated() {
     return this._userDetails;
   }
+  
+  // Method to fetch user data for subscription purpose
+  getUserDetails() {
+    if(!this._userDetails) {
+      this._userDetails = sessionStorage.getItem(this.sessionKey);
+    }
+    return  this._userDetails ; 
+  }
 
   private setUserDetails(details) {
     this._userDetails = details;
     sessionStorage.setItem(this.sessionKey, JSON.stringify(details))
+  }
+
+  updateUserSubscriptions(subscriptionArr) {
+    const userDetails = this.getUserDetails();
+    this.setUserDetails({
+      ...userDetails,
+      subscriptions: subscriptionArr
+    })
   }
 }

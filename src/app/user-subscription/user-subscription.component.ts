@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UserSubscription} from '../service/user-subscription/usersubscription';
-import {UserSubscriptionServiceService} from '../service/user-subscription/user-subscription-service.service';
+import { UserSubscription } from '../service/user-subscription/usersubscription';
+import { UserSubscriptionServiceService } from '../service/user-subscription/user-subscription-service.service';
 
 @Component({
   selector: 'app-user-subscription',
@@ -10,22 +10,44 @@ import {UserSubscriptionServiceService} from '../service/user-subscription/user-
 export class UserSubscriptionComponent implements OnInit {
 
   subscriptionData: UserSubscription[];
+  userSubscriptionId: any[];
 
-  constructor(private _subcribeService:UserSubscriptionServiceService) { }
+  constructor(private _subcribeService: UserSubscriptionServiceService) { }
 
   ngOnInit(): void {
     this.getSubscriptionDetails();
+    this.getUserSubscriptionIds();
   }
 
-  getSubscriptionDetails():void{
+  getUserSubscriptionIds() {
+    this.userSubscriptionId = this._subcribeService.getUserSubscriptionIds();
+  }
+
+
+  isSubscribed(elementId) {
+    if (this.userSubscriptionId && this.userSubscriptionId.includes(elementId)) {
+      return true;
+    }
+    return false;
+  }
+
+  subscribePackage(subscriptionId) {
+    this._subcribeService.setUserSubscriptionData(subscriptionId).subscribe();
+  }
+
+  getSubscriptionDetails(): void {
     this._subcribeService.getSubscriptions()
-    .subscribe(data=>{
-      this.subscriptionData=data;
-    })
+      .subscribe(data => {
+        this.subscriptionData = data;
+      })
   }
 
   saveSubscriptionDetails(subscriptionDto) {
-    this._subcribeService.setSubscription(subscriptionDto).subscribe();
+    this._subcribeService.setSubscription(subscriptionDto).subscribe(
+      data => {
+        this.getUserSubscriptionIds();
+      }
+    );
   }
 
 }

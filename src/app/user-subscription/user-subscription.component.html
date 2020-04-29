@@ -12,7 +12,7 @@
           
         </div>
         <div class="card-footer custom-card-footer">
-            <button  class="btn btn-danger">Subscribe</button>
+            <button  class="btn btn-danger" [ngClass]="{ 'disable-subscription' : isSubscribed(subscription.subscriptId)}" (click)="subscribePackage(subscription.subscriptId)">{{isSubscribed(subscription.subscriptId) ?  "Already Subscribed": " Subscribe" }}</button>
         </div>
       </div>
     </div>
