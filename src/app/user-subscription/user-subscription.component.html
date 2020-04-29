@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+    <div class="col col-md-6 col-lg-4" *ngFor="let subscription of subscriptionData">
+    <div class="card m-2"  style="width: 18rem;">
+      
+        <img class="card-img-top" src={{subscription.imgSrcLink}} style="width: 100%;"/>
+        <div class="card-body">
+          <div class="card-text subscription-data"><span class="sub-heading">Editors Choice:</span><span class="sub-heading-value">{{subscription.editorsChoice}}</span></div>
+          <div class="card-text subscription-data"><span class="sub-heading">Sports Coverage:</span><span class="sub-heading-value">{{subscription.sportsCoverage}}</span></div>
+          <div class="card-text subscription-data"><span class="sub-heading">Concurrent Streams:</span><span class="sub-heading-value">{{subscription.concurrentStreams}}</span></div>
+          <div class="card-text subscription-data"><span class="sub-heading">DVR Capacity & Retention:</span><span class="sub-heading-value">{{subscription.dvrCapacity}}</span></div>
+          
+        </div>
+        <div class="card-footer custom-card-footer">
+            <button  class="btn btn-danger">Subscribe</button>
+        </div>
+      </div>
+    </div>
+    </div>
+</div>

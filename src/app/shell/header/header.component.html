@@ -32,6 +32,9 @@
             <li class="nav-item">
                 <a class="nav-link" routerLink='highlights/'>Highlights</a>
             </li>
+            <li calass="nav-item" *ngIf="isUserAuthenticated();">
+                <a class="nav-link" routerLink="userSubscriptions/">Subscriptions</a>
+            </li>
         </ul>
         <ul class="navbar-nav ">
             <input class="form-control csp-header-search" type="text" placeholder="Search" aria-label="Search">

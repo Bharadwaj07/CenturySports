@@ -23,6 +23,7 @@ import { FooterComponent } from './shell/footer/footer.component';
 import { HomeCarouselComponent } from './home/home-carousel/home-carousel.component';
 import { SportsNinjasComponent } from './home/sports-ninjas/sports-ninjas.component';
 import { DashboardJumbotronComponent } from './home/dashboard-jumbotron/dashboard-jumbotron.component';
+import { UserSubscriptionComponent } from './user-subscription/user-subscription.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { DashboardJumbotronComponent } from './home/dashboard-jumbotron/dashboar
     FooterComponent,
     HomeCarouselComponent,
     SportsNinjasComponent,
-    DashboardJumbotronComponent
+    DashboardJumbotronComponent,
+    UserSubscriptionComponent
   ],
   imports: [
     BrowserModule,
