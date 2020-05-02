@@ -22,18 +22,14 @@
               <a class="dropdown-item" href="#">Hockey</a> -->
                 </div>
             </li>
-            <!-- <li class="nav-item">
-          <a class="nav-link" href="#">Scores</a>
-        </li> -->
-
-            <!-- <li class="nav-item">
-          <a class="nav-link" routerLink='live/'>Live</a>
-        </li> -->
             <li class="nav-item">
                 <a class="nav-link" routerLink='highlights/'>Highlights</a>
             </li>
             <li calass="nav-item" *ngIf="isUserAuthenticated();">
                 <a class="nav-link" routerLink="userSubscriptions/">Subscriptions</a>
+            </li>
+            <li calass="nav-item" *ngIf="isUserAuthenticated();">
+                <a class="nav-link" routerLink="images/list">Gallery</a>
             </li>
         </ul>
         <ul class="navbar-nav ">

@@ -97,4 +97,11 @@ export class AuthenticationService {
       subscriptions: subscriptionArr
     })
   }
+  updateUserUploads(userFile){
+    const userDetails = this.getUserDetails();
+    this.setUserDetails({
+      ...userDetails,
+      userUploadedImage:userFile
+    })
+  }
 }

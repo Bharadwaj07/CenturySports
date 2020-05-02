@@ -7,8 +7,9 @@ import { HighlightsComponent } from './highlights/highlights.component';
 import { SportsComponent } from './sports/sports.component';
 import { SportsDetailsComponent } from './sports-details/sports-details.component';
 import { LogoutComponent } from './logout/logout.component';
-import { LiveComponent } from './live/live.component';
 import {UserSubscriptionComponent} from './user-subscription/user-subscription.component';
+import { GalleryComponent } from './gallery/gallery/gallery.component';
+import { GalleryListComponent } from './gallery/gallery-list/gallery-list.component';
 // import { from } from 'rxjs';
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -18,8 +19,10 @@ const routes: Routes = [
   {path:'highlights',component:HighlightsComponent},
   {path:'logout',component:LogoutComponent},
   { path: 'login', component: LoginComponent },
-  {path:'live',component:LiveComponent},
   {path:'userSubscriptions',component:UserSubscriptionComponent},
+  {path:'images/uploads',component:GalleryComponent},
+  {path:'images/list',component:GalleryListComponent},
+  
 ];
 
 @NgModule({

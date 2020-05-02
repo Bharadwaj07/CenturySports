@@ -12,7 +12,6 @@ import { SportsDetailsComponent } from './sports-details/sports-details.componen
 import { HighlightsComponent } from './highlights/highlights.component';
 import { SafePipe } from './service/pipe/safe.pipe';
 import { LogoutComponent } from './logout/logout.component';
-import { LiveComponent } from './live/live.component';
 // firebase dependencies. and setup
 import { environment } from "src/environments/environment";
 import { AngularFireModule } from "@angular/fire";
@@ -24,6 +23,9 @@ import { HomeCarouselComponent } from './home/home-carousel/home-carousel.compon
 import { SportsNinjasComponent } from './home/sports-ninjas/sports-ninjas.component';
 import { DashboardJumbotronComponent } from './home/dashboard-jumbotron/dashboard-jumbotron.component';
 import { UserSubscriptionComponent } from './user-subscription/user-subscription.component';
+import { GalleryComponent } from './gallery/gallery/gallery.component';
+import { GalleryListComponent } from './gallery/gallery-list/gallery-list.component';
+
 
 @NgModule({
   declarations: [
@@ -36,13 +38,15 @@ import { UserSubscriptionComponent } from './user-subscription/user-subscription
     HighlightsComponent,
     SafePipe,
     LogoutComponent,
-    LiveComponent,
     HeaderComponent,
     FooterComponent,
     HomeCarouselComponent,
     SportsNinjasComponent,
     DashboardJumbotronComponent,
-    UserSubscriptionComponent
+    UserSubscriptionComponent,
+    GalleryComponent,
+    GalleryListComponent,
+
   ],
   imports: [
     BrowserModule,
