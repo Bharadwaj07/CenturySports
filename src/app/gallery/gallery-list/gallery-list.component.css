@@ -5,6 +5,13 @@
     padding-top: 30px;
     padding-bottom: 30px;
 }
+.csp-card-gallery{
+  font-weight: 600;
+  background-color: #fafafa;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
 table{
   margin-left: 50px;
 }
@@ -38,6 +45,7 @@ table{
 
 .imagebox:hover img {
   opacity: 0.7;
+  transform: scale3d(250px);
 }
 
 .imagebox:hover .imagebox-desc {
