@@ -25,6 +25,7 @@ export class HighlightsService {
       .pipe(
         map(
           highlightsData => {
+            console.log(highlightsData)
             return highlightsData;
           }
         )
